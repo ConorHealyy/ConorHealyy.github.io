@@ -36,4 +36,40 @@ Discovered open port 22/tcp on 10.10.28.93
 Discovered open port 80/tcp on 10.10.28.93
 {% endhighlight %}
 
-As you can see above there is two open ports 22/tcp & 80/tcp. 
+As you can see above there is two open ports 22/ssh & 80/http. 
+
+
+{% highlight text %}
+root@ip-10-10-145-36:~# dirb http://10.10.28.93
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Wed Aug 17 19:23:38 2022
+URL_BASE: http://10.10.28.93/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://10.10.28.93/ ----
+==> DIRECTORY: http://10.10.28.93/admin/                                                                                                                                                                          
+==> DIRECTORY: http://10.10.28.93/etc/                                                                                                                                                                            
++ http://10.10.28.93/index.html (CODE:200|SIZE:11321)                                                                                                                                                             
++ http://10.10.28.93/server-status (CODE:403|SIZE:276)                                                                                                                                                            
+                                                                                                                                                                                                                  
+---- Entering directory: http://10.10.28.93/admin/ ----
++ http://10.10.28.93/admin/index.html (CODE:200|SIZE:5771)                                                                                                                                                        
+                                                                                                                                                                                                                  
+---- Entering directory: http://10.10.28.93/etc/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.                        
+    (Use mode '-w' if you want to scan it anyway)
+                                                                               
+-----------------
+END_TIME: Wed Aug 17 19:23:44 2022
+DOWNLOADED: 9224 - FOUND: 3
+{% endhighlight %}
+
