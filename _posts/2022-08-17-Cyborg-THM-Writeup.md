@@ -38,6 +38,7 @@ Discovered open port 80/tcp on 10.10.28.93
 
 As you can see above there is two open ports 22/ssh & 80/http. 
 
+Next I decide to run a web content sanner to see what directories are available to navigate to. I have used dirb for this. It is pretty easy to use as can be seen below.
 
 {% highlight text %}
 root@ip-10-10-145-36:~# dirb http://10.10.28.93
