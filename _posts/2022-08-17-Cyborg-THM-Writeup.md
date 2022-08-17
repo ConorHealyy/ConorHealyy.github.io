@@ -11,6 +11,8 @@ Cyborg was the first CTF that I completed on the popular website TryHackMe. It i
 
 ### Enumeration
 
+I have decided to run an nmap scan on the IP address provided to see can the first couple of questions be answered.
+
 {% highlight text %}
 root@ip-10-10-145-36:~# nmap -sC -sV -T4 -p- -Pn -vv 10.10.28.93
 
@@ -33,3 +35,5 @@ Scanning ip-10-10-28-93.eu-west-1.compute.internal (10.10.28.93) [65535 ports]
 Discovered open port 22/tcp on 10.10.28.93
 Discovered open port 80/tcp on 10.10.28.93
 {% endhighlight %}
+
+As you can see above there is two open ports 22/tcp & 80/tcp. 
